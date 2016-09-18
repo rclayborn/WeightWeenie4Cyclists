@@ -15,11 +15,24 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func IntervalButtonPressed(_ sender: AnyObject) {
+        // performSegue(withIdentifier: "IntervalId", sender: nil)
     }
 
+    @IBAction func HRButtonPressed(_ sender: AnyObject) {
+        // performSegue(withIdentifier: "HRId", sender: nil)
+    }
+    
+    @IBAction func powerButtonPressed(_ sender: AnyObject) {
+        
+    }
 
+    @IBAction func WeightButtonPressed(_ sender: AnyObject) {
+        
+    }
+    
+    @IBAction func howButtonPressed(_ sender: AnyObject) {
+        
+    }
 }
 

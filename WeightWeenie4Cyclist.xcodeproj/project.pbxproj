@@ -10,9 +10,20 @@
 		7026DAA71D8CCE19004355F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7026DAA61D8CCE19004355F1 /* AppDelegate.swift */; };
 		7026DAA91D8CCE19004355F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7026DAA81D8CCE19004355F1 /* ViewController.swift */; };
 		7026DAAC1D8CCE19004355F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7026DAAA1D8CCE19004355F1 /* Main.storyboard */; };
-		7026DAAF1D8CCE19004355F1 /* WeightWeenie4Cyclist.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7026DAAD1D8CCE19004355F1 /* WeightWeenie4Cyclist.xcdatamodeld */; };
 		7026DAB11D8CCE19004355F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7026DAB01D8CCE19004355F1 /* Assets.xcassets */; };
 		7026DAB41D8CCE19004355F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7026DAB21D8CCE19004355F1 /* LaunchScreen.storyboard */; };
+		7026DABC1D8CCE80004355F1 /* IntervalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7026DABB1D8CCE80004355F1 /* IntervalViewController.swift */; };
+		7026DABE1D8CD2C6004355F1 /* HRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7026DABD1D8CD2C6004355F1 /* HRViewController.swift */; };
+		7026DAC01D8CD4AB004355F1 /* PowerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7026DABF1D8CD4AB004355F1 /* PowerViewController.swift */; };
+		7026DAC21D8CD524004355F1 /* WeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7026DAC11D8CD524004355F1 /* WeightViewController.swift */; };
+		7026DAC41D8CDA96004355F1 /* HowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7026DAC31D8CDA96004355F1 /* HowViewController.swift */; };
+		7026DAC61D8CE037004355F1 /* PedalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7026DAC51D8CE037004355F1 /* PedalViewController.swift */; };
+		7026DAC81D8CE181004355F1 /* ClimbViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7026DAC71D8CE181004355F1 /* ClimbViewController.swift */; };
+		7026DACA1D8CE266004355F1 /* SprintPowerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7026DAC91D8CE266004355F1 /* SprintPowerViewController.swift */; };
+		7026DACC1D8CE405004355F1 /* EnduranceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7026DACB1D8CE405004355F1 /* EnduranceViewController.swift */; };
+		7026DACE1D8CE57B004355F1 /* ThresholdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7026DACD1D8CE57B004355F1 /* ThresholdViewController.swift */; };
+		7026DAD01D8CE75A004355F1 /* CreditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7026DACF1D8CE75A004355F1 /* CreditViewController.swift */; };
+		70954D991D8E2A790057D693 /* PSTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70954D981D8E2A790057D693 /* PSTimer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,10 +31,21 @@
 		7026DAA61D8CCE19004355F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7026DAA81D8CCE19004355F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7026DAAB1D8CCE19004355F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		7026DAAE1D8CCE19004355F1 /* WeightWeenie4Cyclist.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WeightWeenie4Cyclist.xcdatamodel; sourceTree = "<group>"; };
 		7026DAB01D8CCE19004355F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7026DAB31D8CCE19004355F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7026DAB51D8CCE19004355F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7026DABB1D8CCE80004355F1 /* IntervalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntervalViewController.swift; sourceTree = "<group>"; };
+		7026DABD1D8CD2C6004355F1 /* HRViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HRViewController.swift; sourceTree = "<group>"; };
+		7026DABF1D8CD4AB004355F1 /* PowerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PowerViewController.swift; sourceTree = "<group>"; };
+		7026DAC11D8CD524004355F1 /* WeightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightViewController.swift; sourceTree = "<group>"; };
+		7026DAC31D8CDA96004355F1 /* HowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HowViewController.swift; sourceTree = "<group>"; };
+		7026DAC51D8CE037004355F1 /* PedalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PedalViewController.swift; sourceTree = "<group>"; };
+		7026DAC71D8CE181004355F1 /* ClimbViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClimbViewController.swift; sourceTree = "<group>"; };
+		7026DAC91D8CE266004355F1 /* SprintPowerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SprintPowerViewController.swift; sourceTree = "<group>"; };
+		7026DACB1D8CE405004355F1 /* EnduranceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnduranceViewController.swift; sourceTree = "<group>"; };
+		7026DACD1D8CE57B004355F1 /* ThresholdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThresholdViewController.swift; sourceTree = "<group>"; };
+		7026DACF1D8CE75A004355F1 /* CreditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditViewController.swift; sourceTree = "<group>"; };
+		70954D981D8E2A790057D693 /* PSTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSTimer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,13 +78,24 @@
 		7026DAA51D8CCE19004355F1 /* WeightWeenie4Cyclist */ = {
 			isa = PBXGroup;
 			children = (
+				70954D981D8E2A790057D693 /* PSTimer.swift */,
 				7026DAA61D8CCE19004355F1 /* AppDelegate.swift */,
 				7026DAA81D8CCE19004355F1 /* ViewController.swift */,
 				7026DAAA1D8CCE19004355F1 /* Main.storyboard */,
+				7026DABB1D8CCE80004355F1 /* IntervalViewController.swift */,
+				7026DABF1D8CD4AB004355F1 /* PowerViewController.swift */,
+				7026DABD1D8CD2C6004355F1 /* HRViewController.swift */,
+				7026DAC11D8CD524004355F1 /* WeightViewController.swift */,
+				7026DAC31D8CDA96004355F1 /* HowViewController.swift */,
 				7026DAB01D8CCE19004355F1 /* Assets.xcassets */,
 				7026DAB21D8CCE19004355F1 /* LaunchScreen.storyboard */,
 				7026DAB51D8CCE19004355F1 /* Info.plist */,
-				7026DAAD1D8CCE19004355F1 /* WeightWeenie4Cyclist.xcdatamodeld */,
+				7026DAC51D8CE037004355F1 /* PedalViewController.swift */,
+				7026DAC71D8CE181004355F1 /* ClimbViewController.swift */,
+				7026DAC91D8CE266004355F1 /* SprintPowerViewController.swift */,
+				7026DACB1D8CE405004355F1 /* EnduranceViewController.swift */,
+				7026DACD1D8CE57B004355F1 /* ThresholdViewController.swift */,
+				7026DACF1D8CE75A004355F1 /* CreditViewController.swift */,
 			);
 			path = WeightWeenie4Cyclist;
 			sourceTree = "<group>";
@@ -140,9 +173,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70954D991D8E2A790057D693 /* PSTimer.swift in Sources */,
+				7026DACC1D8CE405004355F1 /* EnduranceViewController.swift in Sources */,
+				7026DAC81D8CE181004355F1 /* ClimbViewController.swift in Sources */,
 				7026DAA91D8CCE19004355F1 /* ViewController.swift in Sources */,
-				7026DAAF1D8CCE19004355F1 /* WeightWeenie4Cyclist.xcdatamodeld in Sources */,
+				7026DABE1D8CD2C6004355F1 /* HRViewController.swift in Sources */,
+				7026DAC61D8CE037004355F1 /* PedalViewController.swift in Sources */,
+				7026DACE1D8CE57B004355F1 /* ThresholdViewController.swift in Sources */,
+				7026DAC01D8CD4AB004355F1 /* PowerViewController.swift in Sources */,
+				7026DAD01D8CE75A004355F1 /* CreditViewController.swift in Sources */,
 				7026DAA71D8CCE19004355F1 /* AppDelegate.swift in Sources */,
+				7026DACA1D8CE266004355F1 /* SprintPowerViewController.swift in Sources */,
+				7026DAC21D8CD524004355F1 /* WeightViewController.swift in Sources */,
+				7026DABC1D8CCE80004355F1 /* IntervalViewController.swift in Sources */,
+				7026DAC41D8CDA96004355F1 /* HowViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,21 +350,9 @@
 				7026DABA1D8CCE19004355F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		7026DAAD1D8CCE19004355F1 /* WeightWeenie4Cyclist.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				7026DAAE1D8CCE19004355F1 /* WeightWeenie4Cyclist.xcdatamodel */,
-			);
-			currentVersion = 7026DAAE1D8CCE19004355F1 /* WeightWeenie4Cyclist.xcdatamodel */;
-			path = WeightWeenie4Cyclist.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 7026DA9B1D8CCE19004355F1 /* Project object */;
 }
