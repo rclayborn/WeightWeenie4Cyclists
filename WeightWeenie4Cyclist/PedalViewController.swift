@@ -12,27 +12,26 @@ class PedalViewController: UIViewController, CountdownTimerDelegate {
         
         @IBOutlet weak var timeLabel: UILabel!
         var timer: CountdownTimer!
-        
-        @IBOutlet weak var TypeSeg: UISegmentedControl!
+    
         @IBOutlet weak var restLabel: UILabel!
         @IBOutlet weak var SetLabel: UILabel!
         
         var isRunning = true
         var intervalMin = 1
-        var intervalSec = 40
+        var intervalSec = 10
         var restMin = 1
-        var restSec = 0
-        
-        var set = 0
+        var restSec = 20
+    
+        var set = 5
         var repeatSet = 2
         
         var typeOFIntervalLabel = ""
         
-        @IBOutlet weak var typeOfIntervalLabel: UILabel!
+    @IBOutlet weak var typeOfIntervalLabel: UILabel!
         
         override func viewDidLoad() {
             
-            typeOfIntervalLabel.text = "Endurance"
+        typeOfIntervalLabel.text = "Pedal: between RPM 90-110"
             isRunning = true
             SetLabel.text = "Set: \(set)"
             
@@ -42,7 +41,7 @@ class PedalViewController: UIViewController, CountdownTimerDelegate {
         func setTime() {
             print("setTime")
             isRunning = true
-            // Timer will start at 00:40
+            // Timer will start at 00:10
             timer = CountdownTimer(timerLabel: timeLabel, startingMin: intervalMin, startingSec: intervalSec)
             timer.delegate = self
             timer.start()
@@ -103,33 +102,7 @@ class PedalViewController: UIViewController, CountdownTimerDelegate {
         }
         
         //--------------------Type of interval------------------------
-        
-        @IBAction func typeSegAction(_ sender: AnyObject) {
-            
-            if(TypeSeg.selectedSegmentIndex == 0)
-            {
-                typeOfIntervalLabel.text = "Endurance, building Muscle Endurance"
-                
-                print("Endurance")
-                //            intervalMin = 0
-                //            inatervalSec = 40
-                //
-                //            restMin = 0
-                //            restSec = 20
-                
-                //            let setsMin = 10
-                //            let setsSec = 0
-                
-                //            let setRestMin = 3
-                //            let setRestSec = 0
-                
-                //            let repeatSet = 10
-                
-            }
-            else if(TypeSeg.selectedSegmentIndex == 1)
-            {
-                typeOfIntervalLabel.text = "Pedal, Cadence between 90 and 110"
-                print("Pedal")
+    
                 //            intervalMin = 0
                 //            inatervalSec = 10
                 //
@@ -143,64 +116,6 @@ class PedalViewController: UIViewController, CountdownTimerDelegate {
                 //            let setRestSec = 0
                 
                 //            let repeatSet = 2
-                
-            }
-            else if(TypeSeg.selectedSegmentIndex == 2)
-            {
-                typeOfIntervalLabel.text = "Climbing Faster with more power"
-                print("Climb")
-                //            let intervalMin = 0
-                //            let intervalSec = 30
-                
-                //            let restMin = 0
-                //            let restSec = 20
-                
-                //            let setMin = 10
-                //            let setSec = 0
-                //
-                //            let setRestMin = 5
-                //            let setRestSec = 0
-                
-                //            let repeatSet = 3
-                
-            }
-            else if(TypeSeg.selectedSegmentIndex == 3)
-            {
-                print("Power")
-                typeOfIntervalLabel.text = "Power, Sprinting"
-                //            let intervalMin = 0
-                //            let intervalSec = 20
-                
-                //            let restMin = 0
-                //            let restSec = 10
-                
-                //            let setMin = 6
-                //            let setSec = 0
-                //
-                //            let setRestMin = 0
-                //            let setRestSec = 0
-                
-                //            let repeatSet = 6
-                
-            }
-            else if(TypeSeg.selectedSegmentIndex == 4)
-            {
-                typeOfIntervalLabel.text = "Theshold, for longer, stronger effects"
-                print("Theshold")
-                //            let intervalMin = 3
-                //            let intervalSec = 0
-                
-                //            let restMin = 2
-                //            let restSec = 0
-                
-                //            let setMin = 15
-                //            let setSec = 0
-                //
-                //            let setRestMin = 0
-                //            let setRestSec = 0
-                
-                //            let repeatSet = 3
-            }
-        }
+    
    
 }

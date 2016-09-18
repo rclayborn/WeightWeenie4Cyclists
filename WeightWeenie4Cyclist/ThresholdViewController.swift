@@ -18,13 +18,13 @@ class ThresholdViewController: UIViewController, CountdownTimerDelegate {
     @IBOutlet weak var SetLabel: UILabel!
     
     var isRunning = true
-    var intervalMin = 1
-    var intervalSec = 40
-    var restMin = 1
+    var intervalMin = 3
+    var intervalSec = 0
+    var restMin = 2
     var restSec = 0
     
-    var set = 0
-    var repeatSet = 2
+    var set = 15
+    var repeatSet = 3
     
     var typeOFIntervalLabel = ""
     
@@ -32,7 +32,7 @@ class ThresholdViewController: UIViewController, CountdownTimerDelegate {
     
     override func viewDidLoad() {
         
-        typeOfIntervalLabel.text = "Endurance"
+        typeOfIntervalLabel.text = "Theshold, for longer, stronger effects"
         isRunning = true
         SetLabel.text = "Set: \(set)"
         
@@ -104,89 +104,6 @@ class ThresholdViewController: UIViewController, CountdownTimerDelegate {
     
     //--------------------Type of interval------------------------
     
-    @IBAction func typeSegAction(_ sender: AnyObject) {
-        
-        if(TypeSeg.selectedSegmentIndex == 0)
-        {
-            typeOfIntervalLabel.text = "Endurance, building Muscle Endurance"
-            
-            print("Endurance")
-            //            intervalMin = 0
-            //            inatervalSec = 40
-            //
-            //            restMin = 0
-            //            restSec = 20
-            
-            //            let setsMin = 10
-            //            let setsSec = 0
-            
-            //            let setRestMin = 3
-            //            let setRestSec = 0
-            
-            //            let repeatSet = 10
-            
-        }
-        else if(TypeSeg.selectedSegmentIndex == 1)
-        {
-            typeOfIntervalLabel.text = "Pedal, Cadence between 90 and 110"
-            print("Pedal")
-            //            intervalMin = 0
-            //            inatervalSec = 10
-            //
-            //            restMin = 0
-            //            restSec = 20
-            
-            //            let setMin = 10
-            //            let setSec = 0
-            //
-            //            let setRestMin = 5
-            //            let setRestSec = 0
-            
-            //            let repeatSet = 2
-            
-        }
-        else if(TypeSeg.selectedSegmentIndex == 2)
-        {
-            typeOfIntervalLabel.text = "Climbing Faster with more power"
-            print("Climb")
-            //            let intervalMin = 0
-            //            let intervalSec = 30
-            
-            //            let restMin = 0
-            //            let restSec = 20
-            
-            //            let setMin = 10
-            //            let setSec = 0
-            //
-            //            let setRestMin = 5
-            //            let setRestSec = 0
-            
-            //            let repeatSet = 3
-            
-        }
-        else if(TypeSeg.selectedSegmentIndex == 3)
-        {
-            print("Power")
-            typeOfIntervalLabel.text = "Power, Sprinting"
-            //            let intervalMin = 0
-            //            let intervalSec = 20
-            
-            //            let restMin = 0
-            //            let restSec = 10
-            
-            //            let setMin = 6
-            //            let setSec = 0
-            //
-            //            let setRestMin = 0
-            //            let setRestSec = 0
-            
-            //            let repeatSet = 6
-            
-        }
-        else if(TypeSeg.selectedSegmentIndex == 4)
-        {
-            typeOfIntervalLabel.text = "Theshold, for longer, stronger effects"
-            print("Theshold")
             //            let intervalMin = 3
             //            let intervalSec = 0
             
@@ -200,8 +117,6 @@ class ThresholdViewController: UIViewController, CountdownTimerDelegate {
             //            let setRestSec = 0
             
             //            let repeatSet = 3
-        }
-    }
 
    
 }

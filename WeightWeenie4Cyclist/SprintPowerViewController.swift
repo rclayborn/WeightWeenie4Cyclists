@@ -19,12 +19,12 @@ class SprintPowerViewController: UIViewController, CountdownTimerDelegate {
     
     var isRunning = true
     var intervalMin = 1
-    var intervalSec = 40
+    var intervalSec = 20
     var restMin = 1
-    var restSec = 0
+    var restSec = 10
     
-    var set = 0
-    var repeatSet = 2
+    var set = 6
+    var repeatSet = 6
     
     var typeOFIntervalLabel = ""
     
@@ -32,7 +32,7 @@ class SprintPowerViewController: UIViewController, CountdownTimerDelegate {
     
     override func viewDidLoad() {
     
-    typeOfIntervalLabel.text = "Endurance"
+    typeOfIntervalLabel.text = "Power, Sprinting"
     isRunning = true
     SetLabel.text = "Set: \(set)"
     
@@ -104,70 +104,6 @@ class SprintPowerViewController: UIViewController, CountdownTimerDelegate {
     
     //--------------------Type of interval------------------------
     
-    @IBAction func typeSegAction(_ sender: AnyObject) {
-    
-    if(TypeSeg.selectedSegmentIndex == 0)
-    {
-    typeOfIntervalLabel.text = "Endurance, building Muscle Endurance"
-    
-    print("Endurance")
-    //            intervalMin = 0
-    //            inatervalSec = 40
-    //
-    //            restMin = 0
-    //            restSec = 20
-    
-    //            let setsMin = 10
-    //            let setsSec = 0
-    
-    //            let setRestMin = 3
-    //            let setRestSec = 0
-    
-    //            let repeatSet = 10
-    
-    }
-    else if(TypeSeg.selectedSegmentIndex == 1)
-    {
-    typeOfIntervalLabel.text = "Pedal, Cadence between 90 and 110"
-    print("Pedal")
-    //            intervalMin = 0
-    //            inatervalSec = 10
-    //
-    //            restMin = 0
-    //            restSec = 20
-    
-    //            let setMin = 10
-    //            let setSec = 0
-    //
-    //            let setRestMin = 5
-    //            let setRestSec = 0
-    
-    //            let repeatSet = 2
-    
-    }
-    else if(TypeSeg.selectedSegmentIndex == 2)
-    {
-    typeOfIntervalLabel.text = "Climbing Faster with more power"
-    print("Climb")
-    //            let intervalMin = 0
-    //            let intervalSec = 30
-    
-    //            let restMin = 0
-    //            let restSec = 20
-    
-    //            let setMin = 10
-    //            let setSec = 0
-    //
-    //            let setRestMin = 5
-    //            let setRestSec = 0
-    
-    //            let repeatSet = 3
-    
-    }
-    else if(TypeSeg.selectedSegmentIndex == 3)
-    {
-    print("Power")
-    typeOfIntervalLabel.text = "Power, Sprinting"
     //            let intervalMin = 0
     //            let intervalSec = 20
     
@@ -181,27 +117,5 @@ class SprintPowerViewController: UIViewController, CountdownTimerDelegate {
     //            let setRestSec = 0
     
     //            let repeatSet = 6
-    
-    }
-    else if(TypeSeg.selectedSegmentIndex == 4)
-    {
-    typeOfIntervalLabel.text = "Theshold, for longer, stronger effects"
-    print("Theshold")
-    //            let intervalMin = 3
-    //            let intervalSec = 0
-    
-    //            let restMin = 2
-    //            let restSec = 0
-    
-    //            let setMin = 15
-    //            let setSec = 0
-    //
-    //            let setRestMin = 0
-    //            let setRestSec = 0
-    
-    //            let repeatSet = 3
-    }
-    }
-
   
 }
