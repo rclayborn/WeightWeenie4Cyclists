@@ -113,7 +113,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="964" y="36.431784107946029"/>
+            <point key="canvasLocation" x="964" y="-37"/>
         </scene>
         <!--Credit View Controller-->
         <scene sceneID="vuz-hq-ly1">
@@ -154,7 +154,7 @@
                                 </subviews>
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="I would like to thank the following people: Major Pain and Red Dogzilla." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="UxS-84-lrN">
-                                <color key="backgroundColor" red="0.95984014070000001" green="0.93807945079999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="109" id="iwp-I1-q6C"/>
                                 </constraints>
@@ -184,7 +184,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DVb-Vr-nKa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="360.80000000000001" y="819.94002998500753"/>
+            <point key="canvasLocation" x="366" y="772"/>
         </scene>
         <!--How View Controller-->
         <scene sceneID="WlJ-em-eF4">
@@ -226,7 +226,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zoX-cf-YPV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1044" y="819.94002998500753"/>
+            <point key="canvasLocation" x="1046" y="773"/>
         </scene>
         <!--Interval View Controller-->
         <scene sceneID="CAM-xk-TSO">
@@ -296,7 +296,7 @@
                                 </state>
                                 <connections>
                                     <action selector="PedalButtonPressed:" destination="CaZ-zq-pud" eventType="touchUpInside" id="8xg-G4-DjR"/>
-                                    <segue destination="BYS-uj-tGB" kind="show" identifier="PedalId" id="A7D-wp-YTV"/>
+                                    <segue destination="BYS-uj-tGB" kind="show" id="ywS-gl-atc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ltx-mT-kiD">
@@ -356,7 +356,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0I5-GT-8kh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="964" y="-724"/>
+            <point key="canvasLocation" x="964" y="-789"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="6Y2-fX-YWS">
@@ -525,7 +525,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kS8-HV-rYh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-722.39999999999998" y="801.94902548725645"/>
+            <point key="canvasLocation" x="-335" y="772"/>
         </scene>
         <!--Weight View Controller-->
         <scene sceneID="axk-Fi-Z5C">
@@ -1018,7 +1018,7 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="resetButtonPressed:" destination="BYS-uj-tGB" eventType="touchUpInside" id="aPu-I3-HVh"/>
+                                    <action selector="stop:" destination="BYS-uj-tGB" eventType="touchUpInside" id="jDj-ch-vBC"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start When Ready" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tDx-gV-ZHy">
@@ -1044,9 +1044,9 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ww-mW-e4Z">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ww-mW-e4Z">
                                 <color key="backgroundColor" red="0.95984014070000001" green="0.93807945079999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="130"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="77"/>
                                 <color key="textColor" red="0.048312798679999998" green="0.098642676770000007" blue="0.043008797959999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1067,14 +1067,27 @@
                                     <color key="titleColor" red="0.95984014070000001" green="0.93807945079999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="startButtonPressed:" destination="BYS-uj-tGB" eventType="touchUpInside" id="KcR-FK-SSn"/>
+                                    <action selector="start:" destination="BYS-uj-tGB" eventType="touchUpInside" id="PbW-el-jN7"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pedal Stroke" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4uM-OZ-he1">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Improve Pedal Stroke" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4uM-OZ-he1">
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fIZ-6s-ja5">
+                                <color key="backgroundColor" red="0.80216224749999998" green="0.80216224749999998" blue="0.80216224749999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="103" id="SAT-tW-9d0"/>
+                                    <constraint firstAttribute="height" constant="38" id="bIp-ct-Vuu"/>
+                                </constraints>
+                                <state key="normal" title="Instructions">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="instructionButton:" destination="BYS-uj-tGB" eventType="touchUpInside" id="B2k-RQ-ZpE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.84663036619999998" green="0.84663036619999998" blue="0.84663036619999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -1082,6 +1095,7 @@
                             <constraint firstItem="4uM-OZ-he1" firstAttribute="leading" secondItem="LEQ-eN-Jm3" secondAttribute="leadingMargin" id="3Ae-KE-rmw"/>
                             <constraint firstItem="tDx-gV-ZHy" firstAttribute="top" secondItem="4uM-OZ-he1" secondAttribute="bottom" constant="19" id="4wO-vq-KZv"/>
                             <constraint firstItem="wwW-C4-Y9e" firstAttribute="top" secondItem="2Ww-mW-e4Z" secondAttribute="bottom" constant="10" id="AXC-ZO-3Pa"/>
+                            <constraint firstItem="fIZ-6s-ja5" firstAttribute="top" secondItem="wwW-C4-Y9e" secondAttribute="bottom" constant="39.5" id="I6Q-ys-YEI"/>
                             <constraint firstItem="2Ww-mW-e4Z" firstAttribute="leading" secondItem="LEQ-eN-Jm3" secondAttribute="leading" id="L5f-sJ-2AS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4uM-OZ-he1" secondAttribute="trailing" id="LQg-En-aAu"/>
                             <constraint firstItem="9oY-fH-73e" firstAttribute="top" secondItem="xyP-hS-WTt" secondAttribute="bottom" id="OD9-2o-dv8"/>
@@ -1099,19 +1113,21 @@
                             <constraint firstItem="9VT-bc-6i2" firstAttribute="leading" secondItem="LEQ-eN-Jm3" secondAttribute="leading" id="pb1-Vh-vmQ"/>
                             <constraint firstAttribute="leadingMargin" secondItem="0NC-Wh-V8B" secondAttribute="leading" id="pxR-Tx-8LW"/>
                             <constraint firstItem="Yn6-4l-nWB" firstAttribute="top" secondItem="0NC-Wh-V8B" secondAttribute="bottom" constant="8" symbolic="YES" id="sfR-50-E7I"/>
+                            <constraint firstItem="fIZ-6s-ja5" firstAttribute="centerX" secondItem="LEQ-eN-Jm3" secondAttribute="centerX" id="tIR-ni-b3p"/>
                             <constraint firstItem="4uM-OZ-he1" firstAttribute="top" secondItem="xyP-hS-WTt" secondAttribute="bottom" constant="42" id="wFj-GT-V7y"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="SetLabel" destination="0NC-Wh-V8B" id="L7T-0E-lmI"/>
-                        <outlet property="restLabel" destination="tDx-gV-ZHy" id="M4a-pk-Xsr"/>
-                        <outlet property="timeLabel" destination="2Ww-mW-e4Z" id="HMc-vh-o3y"/>
-                        <outlet property="typeOfIntervalLabel" destination="9VT-bc-6i2" id="SMh-fm-i3l"/>
+                        <outlet property="StartOutButton" destination="wwW-C4-Y9e" id="Pau-RN-vVW"/>
+                        <outlet property="StartWhenReadyLABEL" destination="tDx-gV-ZHy" id="Vef-9v-81P"/>
+                        <outlet property="TLabel" destination="2Ww-mW-e4Z" id="ZNV-0z-eNq"/>
+                        <outlet property="inLabel" destination="9VT-bc-6i2" id="u5u-6q-bvj"/>
+                        <outlet property="setLabel" destination="0NC-Wh-V8B" id="Hap-Sr-Y20"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xMg-GQ-crM" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4028" y="-1182"/>
+            <point key="canvasLocation" x="3981.5999999999999" y="-950.37481259370327"/>
         </scene>
         <!--Sprint Power View Controller-->
         <scene sceneID="lkr-qN-AxN">
@@ -1228,7 +1244,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DFs-1L-1gm" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2524" y="-1181.5592203898052"/>
+            <point key="canvasLocation" x="2505" y="-950"/>
         </scene>
         <!--Climb View Controller-->
         <scene sceneID="Ad9-Kk-ZCz">
@@ -1344,7 +1360,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mdy-HS-2Xn" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3271" y="-1182"/>
+            <point key="canvasLocation" x="3233" y="-950"/>
         </scene>
         <!--Endurance View Controller-->
         <scene sceneID="PF0-76-WUM">
@@ -1461,7 +1477,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Khs-tY-cY5" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3270" y="-472"/>
+            <point key="canvasLocation" x="3223" y="-269"/>
         </scene>
         <!--Threshold View Controller-->
         <scene sceneID="oBz-3e-gNv">
@@ -1578,7 +1594,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fqe-Eq-ddx" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2524" y="-473"/>
+            <point key="canvasLocation" x="2506" y="-269"/>
         </scene>
     </scenes>
 </document>

@@ -98,5 +98,4 @@ class HRViewController: UIViewController {
             print("Menu Button Pressed")
         }
         
-        
 }

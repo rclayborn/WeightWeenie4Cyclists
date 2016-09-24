@@ -24,6 +24,11 @@
 		7026DACE1D8CE57B004355F1 /* ThresholdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7026DACD1D8CE57B004355F1 /* ThresholdViewController.swift */; };
 		7026DAD01D8CE75A004355F1 /* CreditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7026DACF1D8CE75A004355F1 /* CreditViewController.swift */; };
 		70954D991D8E2A790057D693 /* PSTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70954D981D8E2A790057D693 /* PSTimer.swift */; };
+		70D6DFDF1D95FB7D008DE7A3 /* applause.wav in Resources */ = {isa = PBXBuildFile; fileRef = 70D6DFDE1D95FB7D008DE7A3 /* applause.wav */; };
+		70D6DFE11D95FB8E008DE7A3 /* rest.wav in Resources */ = {isa = PBXBuildFile; fileRef = 70D6DFE01D95FB8E008DE7A3 /* rest.wav */; };
+		70D6DFE31D95FB95008DE7A3 /* Stop.wav in Resources */ = {isa = PBXBuildFile; fileRef = 70D6DFE21D95FB95008DE7A3 /* Stop.wav */; };
+		70D6DFE51D95FB9B008DE7A3 /* ShotGun.wav in Resources */ = {isa = PBXBuildFile; fileRef = 70D6DFE41D95FB9B008DE7A3 /* ShotGun.wav */; };
+		70D6DFE71D95FBAA008DE7A3 /* get-ready-to-move-yr-noodley.wav in Resources */ = {isa = PBXBuildFile; fileRef = 70D6DFE61D95FBAA008DE7A3 /* get-ready-to-move-yr-noodley.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +51,11 @@
 		7026DACD1D8CE57B004355F1 /* ThresholdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThresholdViewController.swift; sourceTree = "<group>"; };
 		7026DACF1D8CE75A004355F1 /* CreditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditViewController.swift; sourceTree = "<group>"; };
 		70954D981D8E2A790057D693 /* PSTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSTimer.swift; sourceTree = "<group>"; };
+		70D6DFDE1D95FB7D008DE7A3 /* applause.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = applause.wav; sourceTree = "<group>"; };
+		70D6DFE01D95FB8E008DE7A3 /* rest.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = rest.wav; sourceTree = "<group>"; };
+		70D6DFE21D95FB95008DE7A3 /* Stop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Stop.wav; sourceTree = "<group>"; };
+		70D6DFE41D95FB9B008DE7A3 /* ShotGun.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ShotGun.wav; sourceTree = "<group>"; };
+		70D6DFE61D95FBAA008DE7A3 /* get-ready-to-move-yr-noodley.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "get-ready-to-move-yr-noodley.wav"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +88,7 @@
 		7026DAA51D8CCE19004355F1 /* WeightWeenie4Cyclist */ = {
 			isa = PBXGroup;
 			children = (
+				70D6DFDD1D95FB5A008DE7A3 /* Sounds */,
 				70954D981D8E2A790057D693 /* PSTimer.swift */,
 				7026DAA61D8CCE19004355F1 /* AppDelegate.swift */,
 				7026DAA81D8CCE19004355F1 /* ViewController.swift */,
@@ -98,6 +109,18 @@
 				7026DACF1D8CE75A004355F1 /* CreditViewController.swift */,
 			);
 			path = WeightWeenie4Cyclist;
+			sourceTree = "<group>";
+		};
+		70D6DFDD1D95FB5A008DE7A3 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				70D6DFE01D95FB8E008DE7A3 /* rest.wav */,
+				70D6DFE41D95FB9B008DE7A3 /* ShotGun.wav */,
+				70D6DFE21D95FB95008DE7A3 /* Stop.wav */,
+				70D6DFE61D95FBAA008DE7A3 /* get-ready-to-move-yr-noodley.wav */,
+				70D6DFDE1D95FB7D008DE7A3 /* applause.wav */,
+			);
+			name = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,9 +183,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70D6DFE11D95FB8E008DE7A3 /* rest.wav in Resources */,
 				7026DAB41D8CCE19004355F1 /* LaunchScreen.storyboard in Resources */,
+				70D6DFE71D95FBAA008DE7A3 /* get-ready-to-move-yr-noodley.wav in Resources */,
 				7026DAB11D8CCE19004355F1 /* Assets.xcassets in Resources */,
 				7026DAAC1D8CCE19004355F1 /* Main.storyboard in Resources */,
+				70D6DFE31D95FB95008DE7A3 /* Stop.wav in Resources */,
+				70D6DFDF1D95FB7D008DE7A3 /* applause.wav in Resources */,
+				70D6DFE51D95FB9B008DE7A3 /* ShotGun.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

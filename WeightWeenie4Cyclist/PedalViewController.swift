@@ -5,117 +5,199 @@
 //  Created by Randall Clayborn on 9/16/16.
 //  Copyright © 2016 claybear39. All rights reserved.
 //
-
 import UIKit
+import AVFoundation
 
-class PedalViewController: UIViewController, CountdownTimerDelegate {
-        
-        @IBOutlet weak var timeLabel: UILabel!
-        var timer: CountdownTimer!
+class PedalViewController: UIViewController {
     
-        @IBOutlet weak var restLabel: UILabel!
-        @IBOutlet weak var SetLabel: UILabel!
-        
-        var isRunning = true
-        var intervalMin = 1
-        var intervalSec = 10
-        var restMin = 1
-        var restSec = 20
+    var audioPlayer: AVAudioPlayer!
+    let shotShotSound: String = "ShotGun"
+    let countSound: String = "countdown"
+    let stopSound: String = "Stop"
+    let noodleySound: String = "get-ready-to-move-yr-noodley"
+    let restSound: String = "rest"
+    let applauseSound: String = "applause"
+    let wellDoneSound: String = "wellDone"
+    let goSound: String = "go"
+    let getReadySound: String = "get-ready"
     
-        var set = 5
-        var repeatSet = 2
-        
-        var typeOFIntervalLabel = ""
-        
-    @IBOutlet weak var typeOfIntervalLabel: UILabel!
-        
-        override func viewDidLoad() {
+    var startTime = TimeInterval()
+    var timer:Timer = Timer()
+    
+    @IBOutlet weak var StartWhenReadyLABEL: UILabel!
+    @IBOutlet weak var StartOutButton: UIButton!
+    @IBOutlet weak var inLabel: UILabel!
+    @IBOutlet weak var setLabel: UILabel!
+    @IBOutlet weak var TLabel: UILabel!
+    
+    var setCount = 0
+    let seconds = UInt8()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func start(_ sender: AnyObject) {
+        if (!timer.isValid) {
+            StartOutButton.isEnabled = true
+            inLabel.text = "GO GO GO!!!"
+            StartWhenReadyLABEL.isHidden = true
+            //voice Comand "Go!"
+            playAudio(String: shotShotSound)
             
-        typeOfIntervalLabel.text = "Pedal: between RPM 90-110"
-            isRunning = true
-            SetLabel.text = "Set: \(set)"
+            let aSelector : Selector = #selector(PedalViewController.updateTime)
+            timer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: aSelector, userInfo: nil, repeats: true)
+            startTime = Date.timeIntervalSinceReferenceDate
+        }
+    }
+    
+    @IBAction func stop(_ sender: AnyObject) {
+        timer.invalidate()
+        playAudio(String: stopSound)
+        setCount = 0
+        inLabel.text = "STOP"
+        setLabel.text = "\(setCount)"
+        TLabel.text = "00:00"
+        StartWhenReadyLABEL.isHidden = false
+    }
+    
+    func updateTime() {
+        let currentTime = Date.timeIntervalSinceReferenceDate
+        
+        //Find the difference between current time and start time.
+        var elapsedTime: TimeInterval = currentTime - startTime
+        
+        //calculate the minutes in elapsed time.
+        let minutes = UInt8(elapsedTime / 60.0)
+        elapsedTime -= (TimeInterval(minutes) * 60)
+        
+        //calculate the seconds in elapsed time.
+        let seconds = UInt8(elapsedTime)
+        elapsedTime -= TimeInterval(seconds)
+        
+        //find out the fraction of milliseconds to be displayed.
+        let fraction = UInt8(elapsedTime * 100)
+        
+        //add the leading zero for minutes, seconds and millseconds and store them as string constants
+        let strMinutes = String(format: "%02d", minutes)
+        let strSeconds = String(format: "%02d", seconds)
+        let strFraction = String(format: "%02d", fraction)
+        //concatenate minuets, seconds and milliseconds as assign it to the UILabel
+        TLabel.text = "\(strMinutes):\(strSeconds):\(strFraction)"
+        
+        if seconds >= 10 { // stop timer after 10 seconds.
+            setCount += 1
+            setLabel.text = "\(setCount)"
+            inLabel.text = ""
             
-        }
-        //--------------start factory method-----------------
-        
-        func setTime() {
-            print("setTime")
-            isRunning = true
-            // Timer will start at 00:10
-            timer = CountdownTimer(timerLabel: timeLabel, startingMin: intervalMin, startingSec: intervalSec)
-            timer.delegate = self
-            timer.start()
-        }
-        
-        func restTime() {
-            print("restTime")
-            restLabel.textColor = UIColor.black
-            restLabel.text = "REST"
+            //Voice comands "REST"
+            playAudio(String: restSound)
             
-            isRunning = false
-            timer = CountdownTimer(timerLabel: timeLabel, startingMin: restMin, startingSec: restSec)
-            timer.delegate = self
-            timer.start()
+            timer.invalidate()
+            prepareRestingTimer()
         }
+    }
+    
+    func prepareRestingTimer() {
         
-        func countdownEnded() -> Void {
-            // Handle countdown finishing
-            print("Count Down Ended")
-            timer.reset()
-            if isRunning == true {
-                restTime()
-                set += set
-                SetLabel.text = "Set: \(set)"
-            } else {
-                setTime()
+        if (!timer.isValid) {
+            inLabel.text = ""
+            let rSelector : Selector = #selector(PedalViewController.restingTimer)
+            
+            timer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: rSelector, userInfo: nil, repeats: true)
+            startTime = Date.timeIntervalSinceReferenceDate
+        }
+    }
+    
+    func restingTimer() {
+        inLabel.text = "RESTING: Easy Pedaling"
+        let currentTime = Date.timeIntervalSinceReferenceDate
+        
+        //Find the difference between current time and start time.
+        var elapsedTime: TimeInterval = currentTime - startTime
+        
+        //calculate the minutes in elapsed time.
+        let minutes = UInt8(elapsedTime / 60.0)
+        elapsedTime -= (TimeInterval(minutes) * 60)
+        
+        //calculate the seconds in elapsed time.
+        let seconds = UInt8(elapsedTime)
+        elapsedTime -= TimeInterval(seconds)
+        
+        //find out the fraction of milliseconds to be displayed.
+        let fraction = UInt8(elapsedTime * 100)
+        
+        //add the leading zero for minutes, seconds and millseconds and store them as string constants
+        let strMinutes = String(format: "%02d", minutes)
+        let strSeconds = String(format: "%02d", seconds)
+        let strFraction = String(format: "%02d", fraction)
+        
+        //concatenate minuets, seconds and milliseconds as assign it to the UILabel
+        TLabel.text = "\(strMinutes):\(strSeconds):\(strFraction)"
+        
+        // stop timer after 10 seconds.
+        if seconds >= 20 {
+            setLabel.text = "Set: \(setCount)"
+            inLabel.text = "Press Start to do another set"
+            
+            timer.invalidate()
+            applauseSoundOne()
+        }
+    }
+    
+    func applauseSoundOne() {
+        playAudio(String: applauseSound)
+    }
+    
+    func WellDoneSoundOne() {
+        //sound command "Congraturations! So another?"
+        playAudio(String: wellDoneSound)
+    }
+    
+    func Stop() {
+        if audioPlayer != nil {
+            audioPlayer.stop()
+            audioPlayer = nil
+        }
+    }
+    
+    func playAudio(String: String) {
+        do {
+            if let bundle = Bundle.main.path(forResource: (String), ofType: "wav") {
+                let alertSound = NSURL(fileURLWithPath: bundle)
+                try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+                try AVAudioSession.sharedInstance().setActive(true)
+                try audioPlayer = AVAudioPlayer(contentsOf: alertSound as URL)
+                audioPlayer.prepareToPlay()
+                audioPlayer.play()
             }
-            
-            if set == repeatSet {
-                finishInterval()
-            }
+        } catch {
+            print(error)
         }
-        
-        func finishInterval() {
-            restLabel.textColor = UIColor.red
-            restLabel.text = "Finished!"
-            timer.reset()
-        }
-        
-        //-----------------ended Factory method------------
-        
-        @IBAction func startButtonPressed(_ sender: AnyObject) {
-            // timer.start() //Begins countdown
-            restLabel.textColor = UIColor.green
-            restLabel.text = "GO, GO, GO!"
-            setTime()
-            //make button disappear. then reapear when finiahed.
-        }
-        
-        @IBAction func stopButtonPressed(_ sender: AnyObject) {
-            restLabel.textColor = UIColor.red
-            restLabel.text = "Interval Aborted!"
-            timer.pause() //Pauses countdown and resets to the initial time
-        }
-        
-        @IBAction func resetButtonPressed(_ sender: AnyObject) {
-            timer.reset() //Pauses countdown and resets to the initial time
-        }
-        
-        //--------------------Type of interval------------------------
+    }
     
-                //            intervalMin = 0
-                //            inatervalSec = 10
-                //
-                //            restMin = 0
-                //            restSec = 20
-                
-                //            let setMin = 10
-                //            let setSec = 0
-                //
-                //            let setRestMin = 5
-                //            let setRestSec = 0
-                
-                //            let repeatSet = 2
+    @IBAction func instructionButton(_ sender: AnyObject) {
+        timer.invalidate()
+        StartWhenReadyLABEL.isHidden = false
+        playAudio(String: stopSound)
+        inLabel.text = "STOP"
+        TLabel.text = "00:00"
+        
+        let ac = UIAlertController(title: "Improve Pedaling!", message: "Pedal as hard as you can (90 to 110 cadence) for 10 seconds then spin easy for 20 seconds. Do this for 20 sets or 10 minutes.", preferredStyle: .actionSheet)
+        
+        let popover = ac.popoverPresentationController
+        popover?.sourceView = view
+        popover?.sourceRect = CGRect(x: 32, y: 32, width: 64, height: 84)
+        
+        present(ac, animated: true, completion: nil)
+        
+        perform(#selector(PedalViewController.dismissPop), with: nil, afterDelay: 5.0)
+    }
     
-   
+    func dismissPop() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }
+
