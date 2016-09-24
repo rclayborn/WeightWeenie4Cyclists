@@ -23,7 +23,7 @@
 		7026DACC1D8CE405004355F1 /* EnduranceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7026DACB1D8CE405004355F1 /* EnduranceViewController.swift */; };
 		7026DACE1D8CE57B004355F1 /* ThresholdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7026DACD1D8CE57B004355F1 /* ThresholdViewController.swift */; };
 		7026DAD01D8CE75A004355F1 /* CreditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7026DACF1D8CE75A004355F1 /* CreditViewController.swift */; };
-		70954D991D8E2A790057D693 /* PSTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70954D981D8E2A790057D693 /* PSTimer.swift */; };
+		7053048E1D96F9B900FC6E82 /* backgrpoundImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 7053048D1D96F9B900FC6E82 /* backgrpoundImage.png */; };
 		70D6DFDF1D95FB7D008DE7A3 /* applause.wav in Resources */ = {isa = PBXBuildFile; fileRef = 70D6DFDE1D95FB7D008DE7A3 /* applause.wav */; };
 		70D6DFE11D95FB8E008DE7A3 /* rest.wav in Resources */ = {isa = PBXBuildFile; fileRef = 70D6DFE01D95FB8E008DE7A3 /* rest.wav */; };
 		70D6DFE31D95FB95008DE7A3 /* Stop.wav in Resources */ = {isa = PBXBuildFile; fileRef = 70D6DFE21D95FB95008DE7A3 /* Stop.wav */; };
@@ -50,7 +50,7 @@
 		7026DACB1D8CE405004355F1 /* EnduranceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnduranceViewController.swift; sourceTree = "<group>"; };
 		7026DACD1D8CE57B004355F1 /* ThresholdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThresholdViewController.swift; sourceTree = "<group>"; };
 		7026DACF1D8CE75A004355F1 /* CreditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditViewController.swift; sourceTree = "<group>"; };
-		70954D981D8E2A790057D693 /* PSTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSTimer.swift; sourceTree = "<group>"; };
+		7053048D1D96F9B900FC6E82 /* backgrpoundImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgrpoundImage.png; sourceTree = "<group>"; };
 		70D6DFDE1D95FB7D008DE7A3 /* applause.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = applause.wav; sourceTree = "<group>"; };
 		70D6DFE01D95FB8E008DE7A3 /* rest.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = rest.wav; sourceTree = "<group>"; };
 		70D6DFE21D95FB95008DE7A3 /* Stop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Stop.wav; sourceTree = "<group>"; };
@@ -89,7 +89,6 @@
 			isa = PBXGroup;
 			children = (
 				70D6DFDD1D95FB5A008DE7A3 /* Sounds */,
-				70954D981D8E2A790057D693 /* PSTimer.swift */,
 				7026DAA61D8CCE19004355F1 /* AppDelegate.swift */,
 				7026DAA81D8CCE19004355F1 /* ViewController.swift */,
 				7026DAAA1D8CCE19004355F1 /* Main.storyboard */,
@@ -99,6 +98,7 @@
 				7026DAC11D8CD524004355F1 /* WeightViewController.swift */,
 				7026DAC31D8CDA96004355F1 /* HowViewController.swift */,
 				7026DAB01D8CCE19004355F1 /* Assets.xcassets */,
+				7053048D1D96F9B900FC6E82 /* backgrpoundImage.png */,
 				7026DAB21D8CCE19004355F1 /* LaunchScreen.storyboard */,
 				7026DAB51D8CCE19004355F1 /* Info.plist */,
 				7026DAC51D8CE037004355F1 /* PedalViewController.swift */,
@@ -184,6 +184,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				70D6DFE11D95FB8E008DE7A3 /* rest.wav in Resources */,
+				7053048E1D96F9B900FC6E82 /* backgrpoundImage.png in Resources */,
 				7026DAB41D8CCE19004355F1 /* LaunchScreen.storyboard in Resources */,
 				70D6DFE71D95FBAA008DE7A3 /* get-ready-to-move-yr-noodley.wav in Resources */,
 				7026DAB11D8CCE19004355F1 /* Assets.xcassets in Resources */,
@@ -201,7 +202,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70954D991D8E2A790057D693 /* PSTimer.swift in Sources */,
 				7026DACC1D8CE405004355F1 /* EnduranceViewController.swift in Sources */,
 				7026DAC81D8CE181004355F1 /* ClimbViewController.swift in Sources */,
 				7026DAA91D8CCE19004355F1 /* ViewController.swift in Sources */,

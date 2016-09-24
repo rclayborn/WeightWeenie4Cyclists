@@ -12,14 +12,11 @@ class PedalViewController: UIViewController {
     
     var audioPlayer: AVAudioPlayer!
     let shotShotSound: String = "ShotGun"
-    let countSound: String = "countdown"
     let stopSound: String = "Stop"
     let noodleySound: String = "get-ready-to-move-yr-noodley"
     let restSound: String = "rest"
     let applauseSound: String = "applause"
-    let wellDoneSound: String = "wellDone"
     let goSound: String = "go"
-    let getReadySound: String = "get-ready"
     
     var startTime = TimeInterval()
     var timer:Timer = Timer()
@@ -36,6 +33,7 @@ class PedalViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        playAudio(String: noodleySound)
     }
     
     @IBAction func start(_ sender: AnyObject) {
@@ -148,11 +146,6 @@ class PedalViewController: UIViewController {
     
     func applauseSoundOne() {
         playAudio(String: applauseSound)
-    }
-    
-    func WellDoneSoundOne() {
-        //sound command "Congraturations! So another?"
-        playAudio(String: wellDoneSound)
     }
     
     func Stop() {

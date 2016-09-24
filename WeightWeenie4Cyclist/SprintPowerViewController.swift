@@ -8,114 +8,191 @@
 
 import UIKit
 
-class SprintPowerViewController: UIViewController, CountdownTimerDelegate {
+import AVFoundation
+
+class SprintPowerViewController: UIViewController {
     
-    @IBOutlet weak var timeLabel: UILabel!
-    var timer: CountdownTimer!
+    var audioPlayer: AVAudioPlayer!
+    let shotShotSound: String = "ShotGun"
+    let stopSound: String = "Stop"
+    let noodleySound: String = "get-ready-to-move-yr-noodley"
+    let restSound: String = "rest"
+    let applauseSound: String = "applause"
+    let goSound: String = "go"
     
-    @IBOutlet weak var TypeSeg: UISegmentedControl!
-    @IBOutlet weak var restLabel: UILabel!
-    @IBOutlet weak var SetLabel: UILabel!
+    var startTime = TimeInterval()
+    var timer:Timer = Timer()
     
-    var isRunning = true
-    var intervalMin = 1
-    var intervalSec = 20
-    var restMin = 1
-    var restSec = 10
+    @IBOutlet weak var StartWhenReadyLABEL: UILabel!
+    @IBOutlet weak var StartOutButton: UIButton!
+    @IBOutlet weak var inLabel: UILabel!
+    @IBOutlet weak var setLabel: UILabel!
+    @IBOutlet weak var TLabel: UILabel!
     
-    var set = 6
-    var repeatSet = 6
-    
-    var typeOFIntervalLabel = ""
-    
-    @IBOutlet weak var typeOfIntervalLabel: UILabel!
+    var setCount = 0
+    let seconds = UInt8()
     
     override func viewDidLoad() {
-    
-    typeOfIntervalLabel.text = "Power, Sprinting"
-    isRunning = true
-    SetLabel.text = "Set: \(set)"
-    
-    }
-    //--------------start factory method-----------------
-    
-    func setTime() {
-    print("setTime")
-    isRunning = true
-    // Timer will start at 00:40
-    timer = CountdownTimer(timerLabel: timeLabel, startingMin: intervalMin, startingSec: intervalSec)
-    timer.delegate = self
-    timer.start()
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+         playAudio(String: noodleySound)
     }
     
-    func restTime() {
-    print("restTime")
-    restLabel.textColor = UIColor.black
-    restLabel.text = "REST"
-    
-    isRunning = false
-    timer = CountdownTimer(timerLabel: timeLabel, startingMin: restMin, startingSec: restSec)
-    timer.delegate = self
-    timer.start()
+    @IBAction func start(_ sender: AnyObject) {
+        if (!timer.isValid) {
+            StartOutButton.isEnabled = true
+            inLabel.text = "GO GO GO!!!"
+            StartWhenReadyLABEL.isHidden = true
+            //voice Comand "Go!"
+            playAudio(String: shotShotSound)
+            
+            let aSelector : Selector = #selector(SprintPowerViewController.updateTime)
+            timer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: aSelector, userInfo: nil, repeats: true)
+            startTime = Date.timeIntervalSinceReferenceDate
+        }
     }
     
-    func countdownEnded() -> Void {
-    // Handle countdown finishing
-    print("Count Down Ended")
-    timer.reset()
-    if isRunning == true {
-    restTime()
-    set += set
-    SetLabel.text = "Set: \(set)"
-    } else {
-    setTime()
+    @IBAction func stop(_ sender: AnyObject) {
+        timer.invalidate()
+        playAudio(String: stopSound)
+        setCount = 0
+        inLabel.text = "STOP"
+        setLabel.text = "\(setCount)"
+        TLabel.text = "00:00"
+        StartWhenReadyLABEL.isHidden = false
     }
     
-    if set == repeatSet {
-    finishInterval()
+    func updateTime() {
+        let currentTime = Date.timeIntervalSinceReferenceDate
+        
+        //Find the difference between current time and start time.
+        var elapsedTime: TimeInterval = currentTime - startTime
+        
+        //calculate the minutes in elapsed time.
+        let minutes = UInt8(elapsedTime / 60.0)
+        elapsedTime -= (TimeInterval(minutes) * 60)
+        
+        //calculate the seconds in elapsed time.
+        let seconds = UInt8(elapsedTime)
+        elapsedTime -= TimeInterval(seconds)
+        
+        //find out the fraction of milliseconds to be displayed.
+        let fraction = UInt8(elapsedTime * 100)
+        
+        //add the leading zero for minutes, seconds and millseconds and store them as string constants
+        let strMinutes = String(format: "%02d", minutes)
+        let strSeconds = String(format: "%02d", seconds)
+        let strFraction = String(format: "%02d", fraction)
+        //concatenate minuets, seconds and milliseconds as assign it to the UILabel
+        TLabel.text = "\(strMinutes):\(strSeconds):\(strFraction)"
+        
+        if seconds >= 20 { // stop timer after 10 seconds.
+            setCount += 1
+            setLabel.text = "\(setCount)"
+            inLabel.text = ""
+            
+            //Voice comands "REST"
+            playAudio(String: restSound)
+            
+            timer.invalidate()
+            prepareRestingTimer()
+        }
     }
+    
+    func prepareRestingTimer() {
+        
+        if (!timer.isValid) {
+            inLabel.text = ""
+            let rSelector : Selector = #selector(SprintPowerViewController.restingTimer)
+            
+            timer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: rSelector, userInfo: nil, repeats: true)
+            startTime = Date.timeIntervalSinceReferenceDate
+        }
     }
     
-    func finishInterval() {
-    restLabel.textColor = UIColor.red
-    restLabel.text = "Finished!"
-    timer.reset()
+    func restingTimer() {
+        inLabel.text = "RESTING: Coast"
+        let currentTime = Date.timeIntervalSinceReferenceDate
+        
+        //Find the difference between current time and start time.
+        var elapsedTime: TimeInterval = currentTime - startTime
+        
+        //calculate the minutes in elapsed time.
+        let minutes = UInt8(elapsedTime / 60.0)
+        elapsedTime -= (TimeInterval(minutes) * 60)
+        
+        //calculate the seconds in elapsed time.
+        let seconds = UInt8(elapsedTime)
+        elapsedTime -= TimeInterval(seconds)
+        
+        //find out the fraction of milliseconds to be displayed.
+        let fraction = UInt8(elapsedTime * 100)
+        
+        //add the leading zero for minutes, seconds and millseconds and store them as string constants
+        let strMinutes = String(format: "%02d", minutes)
+        let strSeconds = String(format: "%02d", seconds)
+        let strFraction = String(format: "%02d", fraction)
+        
+        //concatenate minuets, seconds and milliseconds as assign it to the UILabel
+        TLabel.text = "\(strMinutes):\(strSeconds):\(strFraction)"
+        
+        // stop timer after 10 seconds.
+        if seconds >= 10 {
+            setLabel.text = "Set: \(setCount)"
+            inLabel.text = "Press Start to do another set"
+            
+            timer.invalidate()
+            applauseSoundOne()
+        }
     }
     
-    //-----------------ended Factory method------------
-    
-    @IBAction func startButtonPressed(_ sender: AnyObject) {
-    // timer.start() //Begins countdown
-    restLabel.textColor = UIColor.green
-    restLabel.text = "GO, GO, GO!"
-    setTime()
-    //make button disappear. then reapear when finiahed.
+    func applauseSoundOne() {
+        playAudio(String: applauseSound)
     }
     
-    @IBAction func stopButtonPressed(_ sender: AnyObject) {
-    restLabel.textColor = UIColor.red
-    restLabel.text = "Interval Aborted!"
-    timer.pause() //Pauses countdown and resets to the initial time
+    func Stop() {
+        if audioPlayer != nil {
+            audioPlayer.stop()
+            audioPlayer = nil
+        }
     }
     
-    @IBAction func resetButtonPressed(_ sender: AnyObject) {
-    timer.reset() //Pauses countdown and resets to the initial time
+    func playAudio(String: String) {
+        do {
+            if let bundle = Bundle.main.path(forResource: (String), ofType: "wav") {
+                let alertSound = NSURL(fileURLWithPath: bundle)
+                try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+                try AVAudioSession.sharedInstance().setActive(true)
+                try audioPlayer = AVAudioPlayer(contentsOf: alertSound as URL)
+                audioPlayer.prepareToPlay()
+                audioPlayer.play()
+            }
+        } catch {
+            print(error)
+        }
     }
     
-    //--------------------Type of interval------------------------
+    @IBAction func instructionButton(_ sender: AnyObject) {
+        timer.invalidate()
+        StartWhenReadyLABEL.isHidden = false
+        playAudio(String: stopSound)
+        inLabel.text = "STOP"
+        TLabel.text = "00:00"
+        
+        let ac = UIAlertController(title: "Power Builder!", message: "While moving, Sprint for 20 Second as hard as possible. Then, coast for 10 seconds. Do 6-8 sets", preferredStyle: .actionSheet)
+        
+        let popover = ac.popoverPresentationController
+        popover?.sourceView = view
+        popover?.sourceRect = CGRect(x: 32, y: 32, width: 64, height: 84)
+        
+        present(ac, animated: true, completion: nil)
+        
+        perform(#selector(SprintPowerViewController.dismissPop), with: nil, afterDelay: 5.0)
+    }
     
-    //            let intervalMin = 0
-    //            let intervalSec = 20
+    func dismissPop() {
+        self.dismiss(animated: true, completion: nil)
+    }
     
-    //            let restMin = 0
-    //            let restSec = 10
-    
-    //            let setMin = 6
-    //            let setSec = 0
-    //
-    //            let setRestMin = 0
-    //            let setRestSec = 0
-    
-    //            let repeatSet = 6
-  
 }
+
