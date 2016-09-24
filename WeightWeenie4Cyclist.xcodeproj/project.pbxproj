@@ -24,6 +24,8 @@
 		7026DACE1D8CE57B004355F1 /* ThresholdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7026DACD1D8CE57B004355F1 /* ThresholdViewController.swift */; };
 		7026DAD01D8CE75A004355F1 /* CreditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7026DACF1D8CE75A004355F1 /* CreditViewController.swift */; };
 		7053048E1D96F9B900FC6E82 /* backgrpoundImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 7053048D1D96F9B900FC6E82 /* backgrpoundImage.png */; };
+		705304901D9711D800FC6E82 /* backgrpoundImageXL.png in Resources */ = {isa = PBXBuildFile; fileRef = 7053048F1D9711D800FC6E82 /* backgrpoundImageXL.png */; };
+		705304921D97173C00FC6E82 /* PortraitR.png in Resources */ = {isa = PBXBuildFile; fileRef = 705304911D97173C00FC6E82 /* PortraitR.png */; };
 		70D6DFDF1D95FB7D008DE7A3 /* applause.wav in Resources */ = {isa = PBXBuildFile; fileRef = 70D6DFDE1D95FB7D008DE7A3 /* applause.wav */; };
 		70D6DFE11D95FB8E008DE7A3 /* rest.wav in Resources */ = {isa = PBXBuildFile; fileRef = 70D6DFE01D95FB8E008DE7A3 /* rest.wav */; };
 		70D6DFE31D95FB95008DE7A3 /* Stop.wav in Resources */ = {isa = PBXBuildFile; fileRef = 70D6DFE21D95FB95008DE7A3 /* Stop.wav */; };
@@ -51,6 +53,8 @@
 		7026DACD1D8CE57B004355F1 /* ThresholdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThresholdViewController.swift; sourceTree = "<group>"; };
 		7026DACF1D8CE75A004355F1 /* CreditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditViewController.swift; sourceTree = "<group>"; };
 		7053048D1D96F9B900FC6E82 /* backgrpoundImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgrpoundImage.png; sourceTree = "<group>"; };
+		7053048F1D9711D800FC6E82 /* backgrpoundImageXL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgrpoundImageXL.png; sourceTree = "<group>"; };
+		705304911D97173C00FC6E82 /* PortraitR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PortraitR.png; sourceTree = "<group>"; };
 		70D6DFDE1D95FB7D008DE7A3 /* applause.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = applause.wav; sourceTree = "<group>"; };
 		70D6DFE01D95FB8E008DE7A3 /* rest.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = rest.wav; sourceTree = "<group>"; };
 		70D6DFE21D95FB95008DE7A3 /* Stop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Stop.wav; sourceTree = "<group>"; };
@@ -98,7 +102,9 @@
 				7026DAC11D8CD524004355F1 /* WeightViewController.swift */,
 				7026DAC31D8CDA96004355F1 /* HowViewController.swift */,
 				7026DAB01D8CCE19004355F1 /* Assets.xcassets */,
+				7053048F1D9711D800FC6E82 /* backgrpoundImageXL.png */,
 				7053048D1D96F9B900FC6E82 /* backgrpoundImage.png */,
+				705304911D97173C00FC6E82 /* PortraitR.png */,
 				7026DAB21D8CCE19004355F1 /* LaunchScreen.storyboard */,
 				7026DAB51D8CCE19004355F1 /* Info.plist */,
 				7026DAC51D8CE037004355F1 /* PedalViewController.swift */,
@@ -185,12 +191,14 @@
 			files = (
 				70D6DFE11D95FB8E008DE7A3 /* rest.wav in Resources */,
 				7053048E1D96F9B900FC6E82 /* backgrpoundImage.png in Resources */,
+				705304901D9711D800FC6E82 /* backgrpoundImageXL.png in Resources */,
 				7026DAB41D8CCE19004355F1 /* LaunchScreen.storyboard in Resources */,
 				70D6DFE71D95FBAA008DE7A3 /* get-ready-to-move-yr-noodley.wav in Resources */,
 				7026DAB11D8CCE19004355F1 /* Assets.xcassets in Resources */,
 				7026DAAC1D8CCE19004355F1 /* Main.storyboard in Resources */,
 				70D6DFE31D95FB95008DE7A3 /* Stop.wav in Resources */,
 				70D6DFDF1D95FB7D008DE7A3 /* applause.wav in Resources */,
+				705304921D97173C00FC6E82 /* PortraitR.png in Resources */,
 				70D6DFE51D95FB9B008DE7A3 /* ShotGun.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

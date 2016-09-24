@@ -7,14 +7,21 @@
 //
 
 import UIKit
+import MessageUI
 
-class CreditViewController: UIViewController {
-
+class CreditViewController: UIViewController, MFMailComposeViewControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func EmaiMeButton(_ sender: AnyObject) {
+        //send me an email...
+        let email = "claybear39@yahoo.com"
+        let url = NSURL(string: "mailto:\(email)")
+        // UIApplication.shared.openURL(url as! URL)
+        UIApplication.shared.open(url as! URL, completionHandler: nil)
+    }
    
 }
