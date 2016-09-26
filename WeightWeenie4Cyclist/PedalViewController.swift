@@ -185,7 +185,7 @@ class PedalViewController: UIViewController {
         
         present(ac, animated: true, completion: nil)
         
-        perform(#selector(PedalViewController.dismissPop), with: nil, afterDelay: 5.0)
+        perform(#selector(PedalViewController.dismissPop), with: nil, afterDelay: 4.0)
     }
     
     func dismissPop() {

@@ -187,7 +187,7 @@ class SprintPowerViewController: UIViewController {
         
         present(ac, animated: true, completion: nil)
         
-        perform(#selector(SprintPowerViewController.dismissPop), with: nil, afterDelay: 5.0)
+        perform(#selector(SprintPowerViewController.dismissPop), with: nil, afterDelay: 4.0)
     }
     
     func dismissPop() {

@@ -184,7 +184,7 @@ class EnduranceViewController: UIViewController {
         
         present(ac, animated: true, completion: nil)
         
-        perform(#selector(EnduranceViewController.dismissPop), with: nil, afterDelay: 5.0)
+        perform(#selector(EnduranceViewController.dismissPop), with: nil, afterDelay: 4.0)
     }
     
     func dismissPop() {
