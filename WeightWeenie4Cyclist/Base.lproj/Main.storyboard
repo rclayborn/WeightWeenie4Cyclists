@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11198.2" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Rue-1s-hBn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Rue-1s-hBn">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -804,6 +804,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tVM-9s-h9I">
+                                <color key="backgroundColor" red="1" green="0.1083193491" blue="0.13294930690000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="39" id="AS3-5c-KI9"/>
+                                    <constraint firstAttribute="height" constant="30" id="vgf-Wb-o4S"/>
+                                </constraints>
+                                <state key="normal" title="Reset">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="resetAllButton:" destination="C0J-6f-7Xd" eventType="touchUpInside" id="7Ix-oe-YyL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.80216224749999998" green="0.80216224749999998" blue="0.80216224749999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -869,6 +882,8 @@
                             <constraint firstAttribute="trailing" secondItem="knC-u3-kyt" secondAttribute="trailing" id="nkg-Kp-pAj"/>
                             <constraint firstItem="334-ky-G7G" firstAttribute="leading" secondItem="4Gl-Jv-shb" secondAttribute="leadingMargin" id="oSo-3Z-rNP"/>
                             <constraint firstItem="GvI-bK-t0V" firstAttribute="trailing" secondItem="4Gl-Jv-shb" secondAttribute="trailingMargin" id="qTn-c3-p3d"/>
+                            <constraint firstItem="tVM-9s-h9I" firstAttribute="centerX" secondItem="4Gl-Jv-shb" secondAttribute="centerX" id="qWB-Ng-20Z"/>
+                            <constraint firstItem="8ev-Hs-oA7" firstAttribute="top" secondItem="tVM-9s-h9I" secondAttribute="bottom" constant="5" id="qvi-My-TsH"/>
                             <constraint firstAttribute="trailing" secondItem="eDL-Wq-t4Y" secondAttribute="trailing" id="sby-ch-2kl"/>
                             <constraint firstItem="zaI-vK-JXH" firstAttribute="centerY" secondItem="O2m-jm-NG5" secondAttribute="centerY" id="taV-kr-V2o"/>
                             <constraint firstAttribute="trailing" secondItem="37m-Gz-UKa" secondAttribute="trailing" id="uCt-P3-TC1"/>
@@ -899,7 +914,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sAl-LF-TYk" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1749.5999999999999" y="450.22488755622192"/>
+            <point key="canvasLocation" x="1750" y="439"/>
         </scene>
         <!--Power View Controller-->
         <scene sceneID="zh0-Sl-DuE">

@@ -55,6 +55,7 @@
 		7053048D1D96F9B900FC6E82 /* backgrpoundImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgrpoundImage.png; sourceTree = "<group>"; };
 		7053048F1D9711D800FC6E82 /* backgrpoundImageXL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgrpoundImageXL.png; sourceTree = "<group>"; };
 		705304911D97173C00FC6E82 /* PortraitR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PortraitR.png; sourceTree = "<group>"; };
+		705304B41D97523A00FC6E82 /* WeightWeenie_App_Store.mobileprovision */ = {isa = PBXFileReference; lastKnownFileType = file; name = WeightWeenie_App_Store.mobileprovision; path = ../../Downloads/WeightWeenie_App_Store.mobileprovision; sourceTree = "<group>"; };
 		70D6DFDE1D95FB7D008DE7A3 /* applause.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = applause.wav; sourceTree = "<group>"; };
 		70D6DFE01D95FB8E008DE7A3 /* rest.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = rest.wav; sourceTree = "<group>"; };
 		70D6DFE21D95FB95008DE7A3 /* Stop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Stop.wav; sourceTree = "<group>"; };
@@ -76,6 +77,7 @@
 		7026DA9A1D8CCE19004355F1 = {
 			isa = PBXGroup;
 			children = (
+				705304B41D97523A00FC6E82 /* WeightWeenie_App_Store.mobileprovision */,
 				7026DAA51D8CCE19004355F1 /* WeightWeenie4Cyclist */,
 				7026DAA41D8CCE19004355F1 /* Products */,
 			);

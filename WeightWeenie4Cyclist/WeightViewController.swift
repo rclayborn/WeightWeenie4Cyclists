@@ -40,8 +40,8 @@ class WeightViewController: UIViewController {
         
         self.hideKeyboardWhenTappedAround()
         
-        InchLabel.text = "0"
-        cmLabel.text = "0"
+        InchLabel.text = ""
+        cmLabel.text = ""
         male = true
     }
     //need to intragate this method
@@ -130,7 +130,7 @@ class WeightViewController: UIViewController {
             let addFemaleWeight = finalWeight + femaleWeight
             
             // let strFinal = NSString(format: "%.0f", (finalWeight))
-            finalTargetWeightLabel.text = "Your Best cycling Weight Male: \(Int(finalWeight))"
+            finalTargetWeightLabel.text = "Your Best cycling Weight: \(Int(finalWeight))"
             
             //pounds to lose
             let poundsToLose = Int(thirdInteger!) - Int(finalWeight)
@@ -139,39 +139,67 @@ class WeightViewController: UIViewController {
             //must intergrate this method
             if largeFrame == true {
                 if male == true {
-                    let strFinalL = NSString(format: "%.0f", finalWeight + (finalWeight / 0.10))
-                    targetWeightLabel.text = "Target Weight Male: \(strFinalL)"
+                    let strFinalL = NSString(format: "%.0f", finalWeight)
+                    targetWeightLabel.text = "Target Weight: \(strFinalL)"
                 }
                 if male == false {
-                    let strFinalL = NSString(format: "%.0f", (addFemaleWeight / 0.10) + addFemaleWeight)
-                    targetWeightLabel.text = "Target Weight: Female: \(strFinalL)"
+                    let strFinalL = NSString(format: "%.0f", addFemaleWeight)
+                    targetWeightLabel.text = "Target Weight: \(strFinalL)"
                 }
             }
             if mediumFrame == true {
                 if male == true {
-                    let strFinalM = NSString(format: "%.1f", finalWeight)
-                    targetWeightLabel.text = "Target Weight Male: \(strFinalM)"
+                    let strFinalM = NSString(format: "%.0f", finalWeight)
+                    targetWeightLabel.text = "Target Weight: \(strFinalM)"
                 }
                 if  male == false {
                     //female
-                    let strFinalM = NSString(format: "%.1f", (addFemaleWeight / 0.10) + addFemaleWeight)
-                    targetWeightLabel.text = "Target Weight Female: \(strFinalM)"
+                    let strFinalM = NSString(format: "%.0f", addFemaleWeight)
+                    targetWeightLabel.text = "Target Weight: \(strFinalM)"
                 }
             }
             if smallFrame == true {
                 if male == true {
-                    let strFinalS = NSString(format: "%.1f", finalWeight - (finalWeight / 0.10))
-                    targetWeightLabel.text = "Target Weight:\(strFinalS)"
+                   let strFinalS = NSString(format: "%.0f", finalWeight)
+                    targetWeightLabel.text = "Target Weight: \( strFinalS)"
                 }
                 if male == false {
                     //female
-                    let strFinalS = NSString(format: "%.0f", (addFemaleWeight / 0.10) - addFemaleWeight)
+                    let strFinalS = NSString(format: "%.0f",  addFemaleWeight)
                     targetWeightLabel.text = "Target Weight:\(strFinalS)"
                 }
             }
         }
     }
     
+    @IBAction func resetAllButton(_ sender: AnyObject) {
+        leanLabel.text = ""
+        idealBodyFat.text = ""
+        targetWeightLabel.text = ""
+        bodyFatLabel.text = ""
+        finalTargetWeightLabel.text = ""
+        BMILabel.text = ""
+        PoundsToLoseLabel.text = ""
+
+        FeetInput.text! = ""
+        inchInput.text! = ""
+        poundsTextField.text! = ""
+        
+        viewDidLoad()
+        if(segmentedControlMF.selectedSegmentIndex == 0)
+        {
+            print("Male")
+            //one more pound per inch
+            male = true
+        }
+        else if(segmentedControlMF.selectedSegmentIndex == 1)
+        {
+            print("Female")
+            //one less pound per inch
+            male = false
+            //do math for female
+        }
+    }
     
 }
 //end of Class beginning of extension.
