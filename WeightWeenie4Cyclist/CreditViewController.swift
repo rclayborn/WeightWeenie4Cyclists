@@ -21,7 +21,12 @@ class CreditViewController: UIViewController, MFMailComposeViewControllerDelegat
         let email = "claybear39@yahoo.com"
         let url = NSURL(string: "mailto:\(email)")
         // UIApplication.shared.openURL(url as! URL)
-        UIApplication.shared.open(url as! URL, completionHandler: nil)
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url as! URL, completionHandler: nil)
+        } else {
+            // Fallback on earlier versions
+            UIApplication.shared.openURL(url as! URL)
+        }
     }
    
 }

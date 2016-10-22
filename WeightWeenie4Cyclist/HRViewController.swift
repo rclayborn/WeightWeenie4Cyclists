@@ -25,7 +25,6 @@ class HRViewController: UIViewController {
         @IBOutlet weak var zone5Label: UILabel!
         
         var male = true
-        
         var age = Int()
         
         override func viewDidLoad() {
@@ -45,12 +44,12 @@ class HRViewController: UIViewController {
                 let restingHR = Int(RestingHRTextfield.text!)!
                 
                 let maxRestMath = Int(menHRmax) - restingHR
-                let zone1 = Double(maxRestMath) * 0.67 + Double(restingHR)
-                let zone2 = Double(maxRestMath) * 0.73 + Double(restingHR)
-                let zone3 = Double(maxRestMath) * 0.79 + Double(restingHR)
+                let zone1 = Double(maxRestMath) * 0.48 + Double(restingHR)
+                let zone2 = Double(maxRestMath) * 0.65 + Double(restingHR)
+                let zone3 = Double(maxRestMath) * 0.75 + Double(restingHR)
                 let zone4 = Double(maxRestMath) * 0.85 + Double(restingHR)
-                let zone5 = Double(maxRestMath) * 0.91 + Double(restingHR)
-                let maxHeartRate = Double(maxRestMath) * 0.97 + Double(restingHR)
+                let zone5 = Double(maxRestMath) * 0.94 + Double(restingHR)
+                let maxHeartRate = Double(maxRestMath) * 0.96 + Double(restingHR)
                 
                 zone1Label.text = "Zone 1: \(Int(zone1))-\(Int(zone2)) warm-up  or recovery"
                 zone2Label.text = "Zone 2: \(Int(zone2))-\(Int(zone3)) Fitness or Fat burne"
@@ -66,12 +65,12 @@ class HRViewController: UIViewController {
                 let restingHR = Int(RestingHRTextfield.text!)!
                 
                 let maxRestMath = Int(womenHRmax) - restingHR
-                let zone1 = Double(maxRestMath) * 0.67 + Double(restingHR)
-                let zone2 = Double(maxRestMath) * 0.73 + Double(restingHR)
-                let zone3 = Double(maxRestMath) * 0.79 + Double(restingHR)
+                let zone1 = Double(maxRestMath) * 0.48 + Double(restingHR)
+                let zone2 = Double(maxRestMath) * 0.65 + Double(restingHR)
+                let zone3 = Double(maxRestMath) * 0.75 + Double(restingHR)
                 let zone4 = Double(maxRestMath) * 0.85 + Double(restingHR)
-                let zone5 = Double(maxRestMath) * 0.91 + Double(restingHR)
-                let maxHeartRate = Double(maxRestMath) * 0.97 + Double(restingHR)
+                let zone5 = Double(maxRestMath) * 0.94 + Double(restingHR)
+                let maxHeartRate = Double(maxRestMath) * 0.96 + Double(restingHR)
                 
                 zone1Label.text = "Zone 1: \(Int(zone1))-\(Int(zone2)) warm-up  or recovery"
                 zone2Label.text = "Zone 2: \(Int(zone2))-\(Int(zone3)) Fitness or Fat burn"

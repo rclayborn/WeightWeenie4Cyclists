@@ -34,5 +34,9 @@ class ViewController: UIViewController {
     @IBAction func howButtonPressed(_ sender: AnyObject) {
         
     }
+    @IBAction func DIYCustom(_ sender: AnyObject) {
+        
+    }
+    
 }
 

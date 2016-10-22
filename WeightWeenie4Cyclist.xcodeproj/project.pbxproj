@@ -23,6 +23,8 @@
 		7026DACC1D8CE405004355F1 /* EnduranceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7026DACB1D8CE405004355F1 /* EnduranceViewController.swift */; };
 		7026DACE1D8CE57B004355F1 /* ThresholdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7026DACD1D8CE57B004355F1 /* ThresholdViewController.swift */; };
 		7026DAD01D8CE75A004355F1 /* CreditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7026DACF1D8CE75A004355F1 /* CreditViewController.swift */; };
+		704EDC731DBAF9E200A81887 /* DIYViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704EDC721DBAF9E200A81887 /* DIYViewController.swift */; };
+		704EDC751DBAFF3A00A81887 /* countdown.wav in Resources */ = {isa = PBXBuildFile; fileRef = 704EDC741DBAFF3A00A81887 /* countdown.wav */; };
 		7053048E1D96F9B900FC6E82 /* backgrpoundImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 7053048D1D96F9B900FC6E82 /* backgrpoundImage.png */; };
 		705304901D9711D800FC6E82 /* backgrpoundImageXL.png in Resources */ = {isa = PBXBuildFile; fileRef = 7053048F1D9711D800FC6E82 /* backgrpoundImageXL.png */; };
 		705304921D97173C00FC6E82 /* PortraitR.png in Resources */ = {isa = PBXBuildFile; fileRef = 705304911D97173C00FC6E82 /* PortraitR.png */; };
@@ -52,6 +54,8 @@
 		7026DACB1D8CE405004355F1 /* EnduranceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnduranceViewController.swift; sourceTree = "<group>"; };
 		7026DACD1D8CE57B004355F1 /* ThresholdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThresholdViewController.swift; sourceTree = "<group>"; };
 		7026DACF1D8CE75A004355F1 /* CreditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditViewController.swift; sourceTree = "<group>"; };
+		704EDC721DBAF9E200A81887 /* DIYViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DIYViewController.swift; sourceTree = "<group>"; };
+		704EDC741DBAFF3A00A81887 /* countdown.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = countdown.wav; sourceTree = "<group>"; };
 		7053048D1D96F9B900FC6E82 /* backgrpoundImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgrpoundImage.png; sourceTree = "<group>"; };
 		7053048F1D9711D800FC6E82 /* backgrpoundImageXL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgrpoundImageXL.png; sourceTree = "<group>"; };
 		705304911D97173C00FC6E82 /* PortraitR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PortraitR.png; sourceTree = "<group>"; };
@@ -115,6 +119,7 @@
 				7026DACB1D8CE405004355F1 /* EnduranceViewController.swift */,
 				7026DACD1D8CE57B004355F1 /* ThresholdViewController.swift */,
 				7026DACF1D8CE75A004355F1 /* CreditViewController.swift */,
+				704EDC721DBAF9E200A81887 /* DIYViewController.swift */,
 			);
 			path = WeightWeenie4Cyclist;
 			sourceTree = "<group>";
@@ -122,6 +127,7 @@
 		70D6DFDD1D95FB5A008DE7A3 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				704EDC741DBAFF3A00A81887 /* countdown.wav */,
 				70D6DFE01D95FB8E008DE7A3 /* rest.wav */,
 				70D6DFE41D95FB9B008DE7A3 /* ShotGun.wav */,
 				70D6DFE21D95FB95008DE7A3 /* Stop.wav */,
@@ -201,6 +207,7 @@
 				70D6DFE31D95FB95008DE7A3 /* Stop.wav in Resources */,
 				70D6DFDF1D95FB7D008DE7A3 /* applause.wav in Resources */,
 				705304921D97173C00FC6E82 /* PortraitR.png in Resources */,
+				704EDC751DBAFF3A00A81887 /* countdown.wav in Resources */,
 				70D6DFE51D95FB9B008DE7A3 /* ShotGun.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -215,6 +222,7 @@
 				7026DACC1D8CE405004355F1 /* EnduranceViewController.swift in Sources */,
 				7026DAC81D8CE181004355F1 /* ClimbViewController.swift in Sources */,
 				7026DAA91D8CCE19004355F1 /* ViewController.swift in Sources */,
+				704EDC731DBAF9E200A81887 /* DIYViewController.swift in Sources */,
 				7026DABE1D8CD2C6004355F1 /* HRViewController.swift in Sources */,
 				7026DAC61D8CE037004355F1 /* PedalViewController.swift in Sources */,
 				7026DACE1D8CE57B004355F1 /* ThresholdViewController.swift in Sources */,
@@ -349,6 +357,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = Q4JQRFEL63;
 				INFOPLIST_FILE = WeightWeenie4Cyclist/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Claybear39.WeightWeenie4Cyclist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -362,6 +371,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = Q4JQRFEL63;
 				INFOPLIST_FILE = WeightWeenie4Cyclist/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Claybear39.WeightWeenie4Cyclist;
 				PRODUCT_NAME = "$(TARGET_NAME)";

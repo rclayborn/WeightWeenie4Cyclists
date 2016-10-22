@@ -178,7 +178,7 @@ class ThresholdViewController: UIViewController {
         inLabel.text = "STOP"
         TLabel.text = "00:00"
         
-        let ac = UIAlertController(title: "Improve Threshold!", message: "Ride as hard as you can for 3 minutes then recover at an easy [pace for 2 minutes. Do 3 sets.", preferredStyle: .actionSheet)
+        let ac = UIAlertController(title: "Improve Threshold!", message: "Ride as hard as you can for 3 minutes then recover at an easy pace for 2 minutes. Do 3 sets.", preferredStyle: .actionSheet)
         
         let popover = ac.popoverPresentationController
         popover?.sourceView = view
