@@ -12,13 +12,13 @@ import AVFoundation
 class DIYViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var startButtonOutlet: UIButton!
-    var audioPlayer: AVAudioPlayer!
-    let shotShotSound: String = "ShotGun"
-    let countSound: String = "countdown"
-    let stopSound: String = "Stop"
-    let noodleySound: String = "get-ready-to-move-yr-noodley"
-    let restSound: String = "rest"
-    let applauseSound: String = "applause"
+    @objc var audioPlayer: AVAudioPlayer!
+    @objc let shotShotSound: String = "ShotGun"
+    @objc let countSound: String = "countdown"
+    @objc let stopSound: String = "Stop"
+    @objc let noodleySound: String = "get-ready-to-move-yr-noodley"
+    @objc let restSound: String = "rest"
+    @objc let applauseSound: String = "applause"
     
     @IBOutlet weak var specialInfoLabel: UILabel!
     
@@ -30,24 +30,24 @@ class DIYViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var NumberOfSetsLabel: UILabel!
     @IBOutlet weak var GoNameFinishedLabel: UILabel!
-    var dayTime = true
-    var startTime = TimeInterval()
-    var timer:Timer = Timer()
+    @objc var dayTime = true
+    @objc var startTime = TimeInterval()
+    @objc var timer:Timer = Timer()
     @IBOutlet weak var timerLabel: UILabel!
     
-    var numberOfSets = 0
-    let strMinutes = String()
-    let strSeconds = String()
-    let strFraction = String()
-    let minutes = UInt8()
-    let seconds = UInt8()
+    @objc var numberOfSets = 0
+    @objc let strMinutes = String()
+    @objc let strSeconds = String()
+    @objc let strFraction = String()
+    @objc let minutes = UInt8()
+    @objc let seconds = UInt8()
     
     // var setsInput = 0
-    var intervalMinute = 0
-    var intervalSecond = 0
-    var restMinute = 0
-    var restSecond = 0
-    var UserMaxSets = 0
+    @objc var intervalMinute = 0
+    @objc var intervalSecond = 0
+    @objc var restMinute = 0
+    @objc var restSecond = 0
+    @objc var UserMaxSets = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,7 +71,7 @@ class DIYViewController: UIViewController, UITextFieldDelegate {
     }
     
     //setting up textfield after they were checked in StartButtonPressed.
-    func settingUpTextField() {
+    @objc func settingUpTextField() {
         intervalMinute = Int(intMinuteTextfield.text!)!
         intervalSecond = Int(intSecondTextfield.text!)!
         restSecond = Int(restSecondTextfield.text!)!
@@ -110,7 +110,7 @@ class DIYViewController: UIViewController, UITextFieldDelegate {
     }
     
     //=============Starting INterval Point=====================
-    func ReadyToStart() {
+    @objc func ReadyToStart() {
         timer.invalidate()
         playAudio(String: shotShotSound)
         numberOfSets = 0
@@ -147,7 +147,7 @@ class DIYViewController: UIViewController, UITextFieldDelegate {
     }
     
     //restart after first run through from createSet function.
-    func reStartIntervalTimer() {
+    @objc func reStartIntervalTimer() {
         playAudio(String: shotShotSound)
         timerLabel.textColor = UIColor.black
         GoNameFinishedLabel.isHidden = false
@@ -163,7 +163,7 @@ class DIYViewController: UIViewController, UITextFieldDelegate {
     }
     
     //the interval time machine.
-    func updateTime() {
+    @objc func updateTime() {
         let currentTime = NSDate.timeIntervalSinceReferenceDate
         
         //Find the difference between current time and start time.
@@ -195,7 +195,7 @@ class DIYViewController: UIViewController, UITextFieldDelegate {
         }
     }
     //stops interval timer and reset labels.
-    func restTime() {
+    @objc func restTime() {
         timer.invalidate()
         playAudio(String: restSound)
         GoNameFinishedLabel.text = "Rest!"
@@ -206,7 +206,7 @@ class DIYViewController: UIViewController, UITextFieldDelegate {
     }
     
     //rest time machine
-    func updateRestTime() {
+    @objc func updateRestTime() {
         let currentTime = NSDate.timeIntervalSinceReferenceDate
         
         //Find the difference between current time and start time.
@@ -242,7 +242,7 @@ class DIYViewController: UIViewController, UITextFieldDelegate {
     }
     
     //starts REST timer.
-    func StartRestClock() {
+    @objc func StartRestClock() {
         timer.invalidate()
         if (!timer.isValid) {
             let aSelector : Selector = #selector(updateRestTime)
@@ -252,7 +252,7 @@ class DIYViewController: UIViewController, UITextFieldDelegate {
     }
     
     //This function counts down intervals so user know set number.
-    func createSet() {
+    @objc func createSet() {
         
         //keeps repeating until all sets are done.
         if numberOfSets <= UserMaxSets {
@@ -298,14 +298,14 @@ class DIYViewController: UIViewController, UITextFieldDelegate {
         }
     }
     //============Sound functions=======================
-    func Stop() {
+    @objc func Stop() {
         if audioPlayer != nil {
             audioPlayer.stop()
             audioPlayer = nil
         }
     }
     
-    func playAudio(String: String) {
+    @objc func playAudio(String: String) {
         do {
             if let bundle = Bundle.main.path(forResource: (String), ofType: "wav") {
                 let alertSound = NSURL(fileURLWithPath: bundle)

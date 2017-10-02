@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HRViewController: UIViewController {
+class HRViewController: UIViewController, UITextFieldDelegate {
 
         @IBOutlet weak var fitnessLevelSeg: UISegmentedControl!
         @IBOutlet weak var FitnessInfoLabel: UILabel!
@@ -24,17 +24,30 @@ class HRViewController: UIViewController {
         @IBOutlet weak var zone4Label: UILabel!
         @IBOutlet weak var zone5Label: UILabel!
         
-        var male = true
-        var age = Int()
+        @objc var male = true
+        @objc var age = Int()
         
         override func viewDidLoad() {
             super.viewDidLoad()
             // Do any additional setup after loading the view, typically from a nib.
+            self.RestingHRTextfield.delegate = self
+            self.ageTextfield.delegate = self
+            self.hideKeyboardWhenTappedAround()
             male = true
         }
-        
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        RestingHRTextfield.resignFirstResponder()
+        ageTextfield.resignFirstResponder()
+        return true
+    }
+    
         @IBAction func HeartRateZoneButtonAction(_ sender: AnyObject) {
-            print("Start Pressed")
+            //print("Start Pressed")
             
             if male == true {
                 let age = Int(ageTextfield.text!)
@@ -56,6 +69,8 @@ class HRViewController: UIViewController {
                 zone3Label.text = "Zone 3: \(Int(zone3))-\(Int(zone4)) Cardio or Endurance"
                 zone4Label.text = "Zone 4, \(Int(zone4))-\(Int(zone5)) Lactate or hardcore"
                 zone5Label.text = "Zone 5: \(Int(zone5))-\(Int(maxHeartRate)) This is going to hurt"
+                RestingHRTextfield.resignFirstResponder()
+                ageTextfield.resignFirstResponder()
                 
             }else {
                 let age = Int(ageTextfield.text!)
@@ -77,6 +92,8 @@ class HRViewController: UIViewController {
                 zone3Label.text = "Zone 3: \(Int(zone3))-\(Int(zone4)) Cardio or Endurance"
                 zone4Label.text = "Zone 4, \(Int(zone4))-\(Int(zone5)) Lactate or hardcore"
                 zone5Label.text = "Zone 5: \(Int(zone5))-\(Int(maxHeartRate)) This is going to hurt"
+                RestingHRTextfield.resignFirstResponder()
+                ageTextfield.resignFirstResponder()
             }
         }
         

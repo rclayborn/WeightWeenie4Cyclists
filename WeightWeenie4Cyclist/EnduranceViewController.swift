@@ -10,15 +10,15 @@ import AVFoundation
 
 class EnduranceViewController: UIViewController {
     
-    var audioPlayer: AVAudioPlayer!
-    let shotShotSound: String = "ShotGun"
-    let stopSound: String = "Stop"
-    let noodleySound: String = "get-ready-to-move-yr-noodley"
-    let restSound: String = "rest"
-    let applauseSound: String = "applause"
+    @objc var audioPlayer: AVAudioPlayer!
+    @objc let shotShotSound: String = "ShotGun"
+    @objc let stopSound: String = "Stop"
+    @objc let noodleySound: String = "get-ready-to-move-yr-noodley"
+    @objc let restSound: String = "rest"
+    @objc let applauseSound: String = "applause"
     
-    var startTime = TimeInterval()
-    var timer:Timer = Timer()
+    @objc var startTime = TimeInterval()
+    @objc var timer:Timer = Timer()
     
     @IBOutlet weak var StartWhenReadyLABEL: UILabel!
     @IBOutlet weak var StartOutButton: UIButton!
@@ -26,13 +26,14 @@ class EnduranceViewController: UIViewController {
     @IBOutlet weak var setLabel: UILabel!
     @IBOutlet weak var TLabel: UILabel!
     
-    var setCount = 0
-    let seconds = UInt8()
+    @objc var setCount = 0
+    @objc let seconds = UInt8()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         playAudio(String: noodleySound)
+        self.hideKeyboardWhenTappedAround()
     }
     
     @IBAction func start(_ sender: AnyObject) {
@@ -59,7 +60,7 @@ class EnduranceViewController: UIViewController {
         StartWhenReadyLABEL.isHidden = false
     }
     
-    func updateTime() {
+    @objc func updateTime() {
         let currentTime = Date.timeIntervalSinceReferenceDate
         
         //Find the difference between current time and start time.
@@ -96,7 +97,7 @@ class EnduranceViewController: UIViewController {
         }
     }
     
-    func prepareRestingTimer() {
+    @objc func prepareRestingTimer() {
         
         if (!timer.isValid) {
             inLabel.text = ""
@@ -107,7 +108,7 @@ class EnduranceViewController: UIViewController {
         }
     }
     
-    func restingTimer() {
+    @objc func restingTimer() {
         inLabel.text = "RESTING: Easy Spin!"
         let currentTime = Date.timeIntervalSinceReferenceDate
         
@@ -143,18 +144,18 @@ class EnduranceViewController: UIViewController {
         }
     }
     
-    func applauseSoundOne() {
+    @objc func applauseSoundOne() {
         playAudio(String: applauseSound)
     }
     
-    func Stop() {
+    @objc func Stop() {
         if audioPlayer != nil {
             audioPlayer.stop()
             audioPlayer = nil
         }
     }
     
-    func playAudio(String: String) {
+    @objc func playAudio(String: String) {
         do {
             if let bundle = Bundle.main.path(forResource: (String), ofType: "wav") {
                 let alertSound = NSURL(fileURLWithPath: bundle)
@@ -187,7 +188,7 @@ class EnduranceViewController: UIViewController {
         perform(#selector(EnduranceViewController.dismissPop), with: nil, afterDelay: 4.0)
     }
     
-    func dismissPop() {
+    @objc func dismissPop() {
         self.dismiss(animated: true, completion: nil)
     }
     

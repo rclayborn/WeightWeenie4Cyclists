@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PowerViewController: UIViewController {
+class PowerViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var weightTextfield: UITextField!
     @IBOutlet weak var wattsTextfield: UITextField!
@@ -23,6 +23,19 @@ class PowerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.weightTextfield.delegate = self
+        self.wattsTextfield.delegate = self
+        self.hideKeyboardWhenTappedAround()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        wattsTextfield.resignFirstResponder()
+        weightTextfield.resignFirstResponder()
+        return true
     }
     
     @IBAction func calculate(_ sender: AnyObject) {
@@ -36,27 +49,21 @@ class PowerViewController: UIViewController {
         let srtFTP = NSString(format: "%.2f", FTP)
         answerLabel.text = "Your Power To Weight Ratio: \(srtFTP)"
         
+        //fix
         switch FTP {
         case 0...2.5:
             print("beginner")
-            LevelLabel.text = "Beginner, not ready to race"
+            LevelLabel.text = "Beginner, cat 5 racer"
         case 2.6...3:
-            LevelLabel.text = "Fair, cat 5 racer"
+            LevelLabel.text = "Fair, cat 4 racer"
         case 3.1...3.5:
-            LevelLabel.text = "Moderate, cat 4 racer"
+            LevelLabel.text = "Moderate, cat 3 racer"
         case   3.6...4.2:
-            LevelLabel.text = "Good, Local Hotdog, cat 3 racer"
+            LevelLabel.text = "Good, Local Hotdog, cat 2 racer"
         case   4.3...4.7:
-            LevelLabel.text = "Very Good cat 2 semi-pro Racer"
-        case   4.8...5.2:
-            LevelLabel.text = "Excellent, cat 1 pro Racer"
-        case   5.3...5.7:
-            LevelLabel.text = "Exceptional, National pro Racer"
-        case   5.8...6.7:
-            LevelLabel.text = "World Class International Pro Racer"
-            
+            LevelLabel.text = "Very Good,  Semi or Pro Racer"
         default:
-            print("Please try again there has been an error")
+            LevelLabel.text = "Pro Racer"
         }
         
         let zone1 = (FTP * 55.0) + FTP
@@ -76,6 +83,10 @@ class PowerViewController: UIViewController {
         powerZoneLabel3.text = "Zone 3: \(strZone2) - \(strZone3)"
         powerZoneLabel4.text = "Zone 4: \(strZone3) - \(strZone4)"
         powerZoneLabel5.text = "Zone 5: \(strZone4) - \(strZone5)"
+        
+        weightTextfield.resignFirstResponder()
+        wattsTextfield.resignFirstResponder()
+
     }
    
 }

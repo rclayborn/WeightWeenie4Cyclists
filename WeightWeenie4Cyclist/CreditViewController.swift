@@ -12,7 +12,6 @@ import MessageUI
 class CreditViewController: UIViewController, MFMailComposeViewControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 
@@ -22,10 +21,10 @@ class CreditViewController: UIViewController, MFMailComposeViewControllerDelegat
         let url = NSURL(string: "mailto:\(email)")
         // UIApplication.shared.openURL(url as! URL)
         if #available(iOS 10.0, *) {
-            UIApplication.shared.open(url as! URL, completionHandler: nil)
+            UIApplication.shared.open(url! as URL, completionHandler: nil)
         } else {
             // Fallback on earlier versions
-            UIApplication.shared.openURL(url as! URL)
+            UIApplication.shared.openURL(url! as URL)
         }
     }
    

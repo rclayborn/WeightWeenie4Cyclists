@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WeightViewController: UIViewController {
+class WeightViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var segmentedControlMF: UISegmentedControl!
     
@@ -28,15 +28,18 @@ class WeightViewController: UIViewController {
     @IBOutlet weak var BMILabel: UILabel!
     @IBOutlet weak var PoundsToLoseLabel: UILabel!
     
-    var largeFrame = false
-    var smallFrame = false
-    var mediumFrame = false
-    var male = true
+    @objc var largeFrame = false
+    @objc var smallFrame = false
+    @objc var mediumFrame = false
+    @objc var male = true
     
     //-----------------------------------------
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.FeetInput.delegate = self
+        self.inchInput.delegate = self
+        self.poundsTextField.delegate = self
         
         self.hideKeyboardWhenTappedAround()
         
@@ -44,18 +47,30 @@ class WeightViewController: UIViewController {
         cmLabel.text = ""
         male = true
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        FeetInput.resignFirstResponder()
+        inchInput.resignFirstResponder()
+        poundsTextField.resignFirstResponder()
+        return true
+    }
+    
     //need to intragate this method
     @IBAction func segmentedControlMFAction(_ sender: AnyObject) {
         
         if(segmentedControlMF.selectedSegmentIndex == 0)
         {
-            print("Male")
+           // print("Male")
             //one more pound per inch
             male = true
         }
         else if(segmentedControlMF.selectedSegmentIndex == 1)
         {
-            print("Female")
+            //print("Female")
             //one less pound per inch
             male = false
             //do math for female
@@ -64,13 +79,13 @@ class WeightViewController: UIViewController {
     //-------------------------------------------
     @IBAction func SmallWrist(_ sender: AnyObject) {
         smallFrame = true
-        print("You have a Small Frame")
+       // print("You have a Small Frame")
         //Subtract 10% off your target weight
     }
     
     @IBAction func mediumWrist(_ sender: AnyObject) {
         mediumFrame = true
-        print("You have a Medium Frame")
+       // print("You have a Medium Frame")
         //keep your target weight. do nothing.
     }
     
@@ -81,7 +96,9 @@ class WeightViewController: UIViewController {
     }
     
     @IBAction func CalculateButton(_ sender: AnyObject) {
-        self.hideKeyboardWhenTappedAround()
+        FeetInput.resignFirstResponder()
+        inchInput.resignFirstResponder()
+        poundsTextField.resignFirstResponder()
         
         let firstInteger = Float(FeetInput.text!)
         let secondInteger = Float(inchInput.text!)
@@ -205,12 +222,12 @@ class WeightViewController: UIViewController {
 //end of Class beginning of extension.
 extension UIViewController {
     
-    func hideKeyboardWhenTappedAround() {
+    @objc func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
     }
     
-    func dismissKeyboard() {
+    @objc func dismissKeyboard() {
         view.endEditing(true)
     }
 

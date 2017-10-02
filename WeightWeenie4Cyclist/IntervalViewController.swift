@@ -16,7 +16,6 @@ class IntervalViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    
     @IBAction func PedalButtonPressed(_ sender: AnyObject) {
         
     }
